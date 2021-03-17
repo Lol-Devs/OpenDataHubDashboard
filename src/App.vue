@@ -1,20 +1,7 @@
 <template>
-  <div>
-    <!--Header-->
-    <div>
-      <div class="flex flex-col items-center">
-        <div
-          class="bg-st-img flex-col h-40 w-full bg-cover flex justify-center items-center"
-        >
-          <img src="/src/assets/st-logo-white.png" class="w-60" alt="" />
-        </div>
 
-        <h1 class="text-2xl text-black font-sp text-center mt-6 text-primary">
-          Tourismus Dashboard mit dem Open Data Hub
-        </h1>
-      </div>
-    </div>
-    
+    <south-tyrol-header></south-tyrol-header>
+
     <!-- Divider -->
     <div>
       <h1 class="font-sp text-2xl text-center text-secondary-500">....</h1>
@@ -75,9 +62,16 @@
       </div>
     </div>
     </div>
-
-    
-  </div>
 </template>
 
-<script></script>
+<script>
+
+import SouthTyrolHeader from './components/SouthTyrolHeader.vue'
+
+export default {
+    name: 'App',
+    components: {
+        SouthTyrolHeader
+    }
+}
+</script>
