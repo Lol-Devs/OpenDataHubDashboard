@@ -7,7 +7,7 @@
           <img src="/src/assets/st-logo-white.png" class="w-60" alt="" />
         </div>
 
-        <h1 class="text-2xl font-sp text-center mt-6 text-primary">
+        <h1 class="text-3xl mx-6 font-sp text-center mt-6 text-primary">
           Hotel Dashboard mit dem Open Data Hub
         </h1>
       </div>
