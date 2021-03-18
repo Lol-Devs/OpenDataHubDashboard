@@ -55,6 +55,16 @@
       </div>
     </div>
 
+    <div class="flex items-center flex-col w-full">
+      <p
+        class="text-secondary-500 text-center font-sp text-6xl mx-5 mb-6 mt-12"
+      >
+        Urlaub im Herzen Europas
+      </p>
+
+      <img src="../assets/st-berge.png" alt="" />
+    </div>
+
     <!-- Link -->
     <div>
       

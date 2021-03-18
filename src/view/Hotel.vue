@@ -82,32 +82,87 @@
         </div>
       </div>
 
-      <h2 class="text-sgray font-bold text-2xl text-center mb-6 mt-24">
-        Austattung
-      </h2>
+      <div></div>
+
+      <div class="bg-secondary-600 bg-opacity-50 mx-5 px-8 py-4">
+        <h3 class="font-sp text-xl text-primary pb-3">Zum Hotel</h3>
+        <p class="text-sgray">
+          The Google Map Chart displays a map using the Google Maps API. Data
+          values are displayed as markers on the map. Data values can be
+          coordinates (lat-long pairs) or addresses. The map will be scaled so
+          that it includes all the identified points.
+        </p>
+      </div>
 
       <div
-        class="flex flex-col items-center justify-center lg:flex-row flex-wrap"
+        class="flex flex-col items-center justify-center lg:flex-row flex-wrap mt-12"
       >
         <div>
           <div class="flex flex-col items-center mb-8 mx-7">
-            <p class="font-sp text-6xl text-secondary-600">12%</p>
-            <p class="text-sgray font-medium">Hotelauslastung in Prozent</p>
+            <p class="font-sp text-6xl text-secondary-600">120</p>
+            <p class="text-sgray font-medium">Zimmer</p>
           </div>
         </div>
         <div>
           <div class="flex flex-col items-center mb-8 mx-7">
-            <p class="font-sp text-6xl text-secondary-600">10.300</p>
-            <p class="text-sgray font-medium">Belegte Zimmer</p>
+            <p class="font-sp text-6xl text-secondary-600">1040 m</p>
+            <p class="text-sgray font-medium">ü.d.M.</p>
           </div>
         </div>
         <div>
           <div class="flex flex-col items-center mb-8 mx-7">
-            <p class="font-sp text-6xl text-secondary-600">56.083</p>
-            <p class="text-sgray font-medium">Freie Betten</p>
+            <p class="font-sp text-6xl text-secondary-600">56xd3</p>
+            <p class="text-sgray font-medium">ein toller fact</p>
           </div>
         </div>
       </div>
+    </div>
+
+    <div>
+      <div class="h-96 bg-red-300">karte</div>
+    </div>
+
+    <div class="mt-12 mx-5 flex flex-col xl:flex-row">
+      <div class="h-80 bg-red-300 w-full">bild</div>
+
+      <div class="xl:pl-5 pt-5 xl-pt-0">
+        <h3 class="font-sp text-xl text-primary pb-3">Beschreibung</h3>
+        <p class="text-sgray">
+          The Google Map Chart displays a map using the Google Maps API. Data
+          values are displayed as markers on the map. Data values can be
+          coordinates (lat-long pairs) or addresses. The map will be scaled so
+          that it includes all the identified points.
+        </p>
+      </div>
+    </div>
+
+    <div class="bg-secondary-200 mt-12 px-8 py-4 flex flex-col md:flex-row items-center justify-evenly">
+      
+      <div class="flex flex-row items-center">
+        <p class="font-sp text-lg text-white">E-Mail:</p>
+        <p class="text-white pl-2">info@meerhotlinst.com</p>
+      </div>
+
+      <div class="flex flex-row items-center">
+        <p class="font-sp text-lg text-white">Telefon:</p>
+        <p class="text-white pl-2">0127 393 1234</p>
+      </div>
+
+      <div class="flex flex-row items-center">
+        <p class="font-sp text-lg text-white">Web:</p>
+        <p class="text-white pl-2">ww.asds.com</p>
+      </div>
+
+    </div>
+
+    <div class="flex items-center flex-col w-full">
+      <p
+        class="text-secondary-500 text-center font-sp text-6xl mx-5 mb-6 mt-12"
+      >
+        Urlaub im Herzen Europas
+      </p>
+
+      <img src="../assets/st-berge.png" alt="" />
     </div>
 
     <!-- Link -->
