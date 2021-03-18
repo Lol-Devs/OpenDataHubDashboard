@@ -1,4 +1,31 @@
-export default class Accomodation {
+export const BITMASK_STARS = {
+    '0': 0,
+    '1': 52370,
+    '2': 52368,
+    '3': 52352,
+    '3s': 52224,
+    '4': 51200,
+    '4s': 49152,
+    '5': 32768,
+}
+
+
+export const BITMASK_FEATURES = {
+    'none': null,
+    'group_friendly': 1,
+    'meeting_rooms': 2,
+    'swimming_pool': 4,
+    'sauna': 8,
+    'garage': 16,
+    'pick_up': 32,
+    'wlan': 64,
+    'barrier_free': 128,
+    'allergy_menus': 256,
+    'pets': 512
+}
+
+
+export default class Accommodation {
 
     constructor(data) {
 
