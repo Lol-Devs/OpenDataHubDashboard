@@ -22,29 +22,30 @@
           </div>
         </div>
 
-        <h2 class="text-sgray font-bold text-2xl text-center mb-6 mt-24">Aktuelle Auslastung
+        <h2 class="text-sgray font-bold text-2xl text-center mb-6 mt-24">Südtirol in Zahlen
       </h2>
      
        
       <div
         class="flex flex-col items-center justify-center lg:flex-row flex-wrap"
       >
+        
         <div>
           <div class="flex flex-col items-center mb-8 mx-7">
-            <p class="font-sp text-6xl text-secondary-600">12%</p>
-            <p class="text-sgray font-medium">Hotelauslastung in Prozent</p>
+            <p class="font-sp text-6xl text-secondary-600">300</p>
+            <p class="text-sgray font-medium">Sonnentage im Jahr</p>
           </div>
         </div>
         <div>
           <div class="flex flex-col items-center mb-8 mx-7">
-            <p class="font-sp text-6xl text-secondary-600">10.300</p>
-            <p class="text-sgray font-medium">Belegte Zimmer</p>
+            <p class="font-sp text-6xl text-secondary-600">17.000 km</p>
+            <p class="text-sgray font-medium">Wanderweg</p>
           </div>
         </div>
         <div>
           <div class="flex flex-col items-center mb-8 mx-7">
-            <p class="font-sp text-6xl text-secondary-600">56.083</p>
-            <p class="text-sgray font-medium">Freie Betten</p>
+            <p class="font-sp text-6xl text-secondary-600">350</p>
+            <p class="text-sgray font-medium">Berggipfel über 3000m</p>
           </div>
         </div>
       </div>

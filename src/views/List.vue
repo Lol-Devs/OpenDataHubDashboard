@@ -188,11 +188,27 @@
 
         
         </div>
+
+      </div>
+
+      <div>
+        <div  class="flex flex-row mt-12 justify-center">
+          <button v-if="page!=1" @click="pageback()" ><svg class="text-primary h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+  <path fill-rule="evenodd" d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+</svg></button> 
+
+<p class="text-primary font-sp text-xl mx-4">{{page}}</p>
+
+<button @click="pagefor()"> <svg class="text-primary h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+  <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+</svg></button>
+
+        </div>
       </div>
 
       <div class="flex items-center flex-col w-full">
         <p
-          class="text-secondary-500 text-center font-sp text-6xl mx-5 mb-6 mt-12"
+          class="text-secondary-500 text-center font-sp text-6xl mx-5 mb-6 mt-24"
         >
           Urlaub im Herzen Europas
         </p>
@@ -231,6 +247,20 @@ export default {
   },
   props: {},
   methods: {
+
+    pagefor(){
+
+      this.page++;
+      this.getAccommodations();
+
+    },
+
+    pageback(){
+
+      this.page--;
+      this.getAccommodations();
+
+},
 
     searchTerm() {
       this.getAccommodations();

@@ -93,12 +93,7 @@
             <p class="text-sgray font-medium">ü.d.M.</p>
           </div>
         </div>
-        <div>
-          <div class="flex flex-col items-center mb-8 mx-7">
-            <p class="font-sp text-6xl text-secondary-600">56xd3</p>
-            <p class="text-sgray font-medium">ein toller fact</p>
-          </div>
-        </div>
+        
       </div>
     </div>
 
@@ -192,7 +187,7 @@ style=" fill:currentColor;"><g fill="none" fill-rule="nonzero" stroke="none" str
 
       </div>
 
-      <div v-if="accommodation.features.includes('missing')" class="flex-row flex text-secondary-200 pb-2">
+      <div v-if="accommodation.features.includes('Konferenzraum')" class="flex-row flex text-secondary-200 pb-2">
         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
 width="24" height="24"
 viewBox="0 0 172 172"
@@ -234,7 +229,6 @@ style=" fill:currentColor;"><g fill="none" fill-rule="nonzero" stroke="none" str
               accommodation.location.longitude,
             ]"
           >
-            <l-icon :icon-url="iconUrl" :icon-size="iconSize" />
           </l-marker>
         </l-map>
       </div>
