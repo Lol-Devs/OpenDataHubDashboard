@@ -24,7 +24,7 @@
                 />
               </svg>
             </div>
-          
+
             <div v-if="accommodation.stars.s">
               <p class="text-secondary-300 font-bold text-xl ml-1">S</p>
             </div>
@@ -36,12 +36,19 @@
             {{ accommodation.name }}
           </p>
           <h2 class="text-secondary-100 font-bold text-2xl text-center mt-3">
-            dein Hotel in {{ accommodation.location.city }}<br>({{accommodation.location.region}})
+            dein Hotel in {{ accommodation.location.city }}<br />({{
+              accommodation.location.region
+            }})
           </h2>
           <div
             class="flex flex-row items-center mt-2 hover:border-secondary-100 border-b-2 transition duration-300 ease-linear"
           >
-            <a class="font-medium text-secondary-200 mr-4" target="_blank" :href="accommodation.contact.website">Hotelwebseite</a>
+            <a
+              class="font-medium text-secondary-200 mr-4"
+              target="_blank"
+              :href="accommodation.contact.website"
+              >Hotelwebseite</a
+            >
             <svg
               class="h-5 text-secondary-200"
               xmlns="http://www.w3.org/2000/svg"
@@ -60,7 +67,9 @@
 
       <div></div>
 
-      <div class="bg-secondary-600 bg-opacity-50 mx-5 px-8 py-4">
+      <div
+        class="border-secondary-600 border-4 px-4 md:px-12 py-8 mb-12 mt-8 mx-5 md:mx-24"
+      >
         <h3 class="font-sp text-xl text-primary pb-3">Zum Hotel</h3>
         <p class="text-sgray" v-html="accommodation.shortdesc"></p>
       </div>
@@ -70,13 +79,17 @@
       >
         <div>
           <div class="flex flex-col items-center mb-8 mx-7">
-            <p class="font-sp text-6xl text-secondary-600">{{ accommodation.beds }}</p>
+            <p class="font-sp text-6xl text-secondary-600">
+              {{ accommodation.beds }}
+            </p>
             <p class="text-sgray font-medium">Betten</p>
           </div>
         </div>
         <div>
           <div class="flex flex-col items-center mb-8 mx-7">
-            <p class="font-sp text-6xl text-secondary-600">{{ accommodation.altitude }} m</p>
+            <p class="font-sp text-6xl text-secondary-600">
+              {{ accommodation.altitude }} m
+            </p>
             <p class="text-sgray font-medium">ü.d.M.</p>
           </div>
         </div>
@@ -89,57 +102,201 @@
       </div>
     </div>
 
-    <div class="mt-12 mx-5 flex flex-col xl:flex-row">
-      <div class="h-80 bg-red-300 w-full">
-        <img :src="accommodation.image ? accommodation.image : '/src/assets/no-photo.png'">
+    <div class="flex flex-col items-center md:flex-row md:justify-evenly  flex-wrap border-secondary-100 border-b-2 mx-12 md:mx-32 pb-4">
+
+      <div v-if="accommodation.features.includes('Allergikerküche')" class="flex-row flex text-secondary-200 pb-2">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="26" height="26"
+viewBox="0 0 172 172"
+style=" fill:currentColor;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="currentColor"><path d="M144.95703,21.5c-0.24659,0.01109 -0.49212,0.03915 -0.73486,0.08398c0,0 -14.14719,2.09956 -25.97217,10.39307v-5.10205c0,-1.6555 -0.75686,-3.21996 -2.05761,-4.24121c-1.3115,-1.02125 -3.00665,-1.39532 -4.61915,-0.98682c-0.9675,0.24725 -21.81511,5.85354 -24.94336,22.61279c-3.268,1.17175 -8.35661,3.45142 -12.82861,7.13867l7.66357,7.68457c1.4835,-1.118 3.03016,-2.12397 4.53516,-2.87647v7.41162l22.38183,22.38184h7.41162c-0.76325,1.505 -1.76871,3.05166 -2.89746,4.53516l7.68457,7.68457c3.68725,-4.48275 5.96692,-9.58161 7.13867,-12.84961c16.7485,-3.12825 22.36555,-23.96511 22.6128,-24.94336c0.39775,-1.60175 0.05543,-3.31839 -0.96582,-4.61914c-1.02125,-1.30075 -2.58571,-2.05762 -4.24121,-2.05762h-5.16504c7.9633,-11.54161 10.43506,-25.82519 10.43506,-25.8252c0.32075,-1.60752 -0.10951,-3.27354 -1.16852,-4.52473c-1.05901,-1.25119 -2.63104,-1.95081 -4.26946,-1.90008zM29.33154,21.73096l-7.60059,7.60059l38.50684,38.50684c-1.28574,0.62844 -2.61097,1.33529 -3.96826,2.18359c-6.19441,3.87151 -13.26953,10.90164 -13.26953,21.35303v30.02442l-21.26904,21.26904l7.60059,7.60059l21.26904,-21.26905h30.02441c10.45139,0 17.48152,-7.07511 21.35303,-13.26953c0.84831,-1.3573 1.55515,-2.68252 2.18359,-3.96827l38.50683,38.50684l7.60059,-7.60059l-76.27881,-76.25781c-0.11909,-0.13933 -0.24523,-0.27248 -0.37793,-0.39893zM107.5,34.70654v13.66846c0,4.37525 -4.99875,11.5544 -10.75,17.99365v-17.99365c0,-6.794 5.8265,-11.18521 10.75,-13.66846zM137.08349,34.76953c-2.0454,5.87721 -5.03127,12.77883 -9.42724,17.1748c-2.15224,2.15223 -5.44073,2.14435 -7.57959,0c-0.007,-0.00001 -0.014,-0.00001 -0.02099,0c-2.15224,-2.15223 -2.14436,-5.44072 0,-7.57959c0.00001,-0.007 0.00001,-0.014 0,-0.021c4.68913,-4.69346 11.39776,-7.64648 17.02783,-9.57422zM123.625,64.5h13.66845c-2.48325,4.9235 -6.8852,10.75 -13.66845,10.75h-17.99365c6.4285,-5.75125 13.60765,-10.75 17.99365,-10.75zM64.5,78.02148v13.35352c0,2.86169 -4.35535,10.59328 -9.44824,16.48193c-0.64895,0.75034 -0.66227,0.62393 -1.30176,1.32276v-17.80469c0,-5.67361 3.67488,-9.39348 8.23047,-12.24072c1.24858,-0.78036 1.35452,-0.57077 2.51953,-1.11279zM75.25,82.85059l2.24658,2.24658c-0.75759,0.92181 -1.43353,1.86353 -2.24658,2.77148zM86.88184,94.48242l2.26758,2.26758h-5.01807c0.90917,-0.81415 1.8265,-1.50906 2.75049,-2.26758zM80.625,107.5h13.35352c-0.54202,1.16501 -0.33243,1.27095 -1.11279,2.51953c-2.84724,4.55558 -6.56711,8.23047 -12.24072,8.23047h-17.80469c0.69883,-0.63952 0.57242,-0.65285 1.32275,-1.30176c5.88866,-5.09289 13.62024,-9.44824 16.48193,-9.44824z"></path></g></g></svg>
+
+<p class="pl-2">Allergikerküche</p>
+
       </div>
 
-      <div class="xl:pl-5 pt-5 xl-pt-0">
-        <h3 class="font-sp text-xl text-primary pb-3">Beschreibung</h3>
-        <p class="text-sgray" v-html="accommodation.longdesc">
-        </p>
+      <div v-if="accommodation.features.includes('Gruppenfreundlich')" class="flex-row flex text-secondary-200 pb-2">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="26" height="26"
+viewBox="0 0 172 172"
+style=" fill:currentColor;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="currentColor"><path d="M59.125,32.25c-14.82324,0 -26.875,12.05176 -26.875,26.875c0,10.12011 5.71094,18.89649 14.0254,23.43165c-20.40821,5.71094 -35.5254,24.22949 -35.5254,46.44335h96.75c0,-6.63476 -1.34375,-12.97558 -3.77929,-18.77051c4.95507,-4.91308 11.71581,-8.10449 19.40039,-8.10449c15.20118,0 27.37891,12.00977 27.37891,26.875h10.75c0,-16.33496 -10.70801,-30.1084 -25.44726,-35.31543c8.65039,-4.49317 14.69726,-13.4375 14.69726,-23.80957c0,-14.78125 -12.09375,-26.875 -26.875,-26.875c-14.78125,0 -26.875,12.09375 -26.875,26.875c0,10.24609 5.87891,19.10645 14.40332,23.6416c-4.8291,1.5957 -9.23828,3.98926 -12.97558,7.18067c-6.34082,-8.73437 -15.53711,-15.15919 -26.20312,-18.14062c8.31445,-4.53516 14.02539,-13.31153 14.02539,-23.43165c0,-14.82324 -12.05176,-26.875 -26.875,-26.875zM123.625,53.75c8.98633,0 16.125,7.13868 16.125,16.125c0,8.98633 -7.13867,16.125 -16.125,16.125c-8.98632,0 -16.125,-7.13867 -16.125,-16.125c0,-8.98632 7.13868,-16.125 16.125,-16.125z"></path></g></g></svg>
+
+<p class="pl-2">Für Gruppen geeignet</p>
+
+      </div>
+
+      <div v-if="accommodation.features.includes('Schwimmbad')" class="flex-row flex text-secondary-200 pb-2">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="26" height="26"
+viewBox="0 0 172 172"
+style=" fill:currentColor;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="currentColor"><path d="M59.125,10.75c-8.84221,0 -16.125,7.28279 -16.125,16.125v59.125h10.75v-59.125c0,-3.02579 2.34921,-5.375 5.375,-5.375h5.375v-10.75zM123.625,10.75c-8.84221,0 -16.125,7.28279 -16.125,16.125v16.125h-43v10.75h43v10.75h-43v10.75h43v10.75h10.75v-59.125c0,-3.02579 2.34921,-5.375 5.375,-5.375h5.375v-10.75zM10.75,96.75c0,11.80921 9.69079,21.5 21.5,21.5c6.43764,0 12.17317,-2.94163 16.125,-7.4746c3.95183,4.53296 9.68736,7.4746 16.125,7.4746c6.43764,0 12.17317,-2.94163 16.125,-7.4746c3.95183,4.53297 9.68736,7.4746 16.125,7.4746c6.43764,0 12.17317,-2.94163 16.125,-7.4746c3.95183,4.53296 9.68736,7.4746 16.125,7.4746c11.80921,0 21.5,-9.69079 21.5,-21.5h-10.75c0,5.99279 -4.75721,10.75 -10.75,10.75c-5.99279,0 -10.75,-4.75721 -10.75,-10.75h-10.75c0,5.99279 -4.75721,10.75 -10.75,10.75c-5.99279,0 -10.75,-4.75721 -10.75,-10.75h-10.75c0,5.99279 -4.75721,10.75 -10.75,10.75c-5.99279,0 -10.75,-4.75721 -10.75,-10.75h-10.75c0,5.99279 -4.75721,10.75 -10.75,10.75c-5.99279,0 -10.75,-4.75721 -10.75,-10.75zM10.75,129c0,11.80921 9.69079,21.5 21.5,21.5c6.43764,0 12.17317,-2.94163 16.125,-7.4746c3.95183,4.53297 9.68736,7.4746 16.125,7.4746c6.43764,0 12.17317,-2.94163 16.125,-7.4746c3.95183,4.53296 9.68736,7.4746 16.125,7.4746c6.43764,0 12.17317,-2.94163 16.125,-7.4746c3.95183,4.53296 9.68736,7.4746 16.125,7.4746c11.80921,0 21.5,-9.69079 21.5,-21.5h-10.75c0,5.99279 -4.75721,10.75 -10.75,10.75c-5.99279,0 -10.75,-4.75721 -10.75,-10.75h-10.75c0,5.99279 -4.75721,10.75 -10.75,10.75c-5.99279,0 -10.75,-4.75721 -10.75,-10.75h-10.75c0,5.99279 -4.75721,10.75 -10.75,10.75c-5.99279,0 -10.75,-4.75721 -10.75,-10.75h-10.75c0,5.99279 -4.75721,10.75 -10.75,10.75c-5.99279,0 -10.75,-4.75721 -10.75,-10.75z"></path></g></g></svg>
+
+<p class="pl-2">Schwimmbad</p>
+
+      </div>
+
+      <div v-if="accommodation.features.includes('Sauna')" class="flex-row flex text-secondary-200 pb-2">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="26" height="26"
+viewBox="0 0 172 172"
+style=" fill:currentColor;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="currentColor"><path d="M80.625,21.5c-8.84193,0 -16.125,7.28307 -16.125,16.125c0,8.84193 7.28307,16.125 16.125,16.125c8.84193,0 16.125,-7.28307 16.125,-16.125c0,-8.84193 -7.28307,-16.125 -16.125,-16.125zM80.625,53.75h-10.75c-8.84221,0 -16.125,7.28279 -16.125,16.125v37.625h-43v10.75h53.75v32.25h10.75v-43h-10.75v-37.625c0,-3.02579 2.34921,-5.375 5.375,-5.375h21.5c3.02579,0 5.375,2.34921 5.375,5.375v37.625h-10.75v43h10.75v-32.25h53.75v-10.75h-43v-37.625c0,-8.84221 -7.28279,-16.125 -16.125,-16.125zM80.625,32.25c3.0322,0 5.375,2.3428 5.375,5.375c0,3.0322 -2.3428,5.375 -5.375,5.375c-3.0322,0 -5.375,-2.3428 -5.375,-5.375c0,-3.0322 2.3428,-5.375 5.375,-5.375zM32.25,64.5v32.25h10.75v-32.25zM118.25,64.5v32.25h10.75v-32.25zM10.75,75.25v21.5h10.75v-21.5zM139.75,75.25v21.5h10.75v-21.5z"></path></g></g></svg>
+
+<p class="pl-2">Sauna</p>
+
+      </div>
+
+      <div v-if="accommodation.features.includes('Garage')" class="flex-row flex text-secondary-200 pb-2">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="26" height="26"
+viewBox="0 0 172 172"
+style=" fill:currentColor;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="currentColor"><path d="M85.91602,21.5c-0.66297,0.0127 -1.31788,0.14795 -1.93164,0.39893l-69.875,28.21875c-2.02805,0.82054 -3.35651,2.78832 -3.35937,4.97607v95.40625h10.75v-91.77393l64.5,-26.05615l64.5,26.05615v91.77393h10.75v-95.40625c-0.00287,-2.18776 -1.33132,-4.15553 -3.35937,-4.97607l-69.875,-28.21875c-0.66612,-0.27216 -1.38009,-0.40782 -2.09961,-0.39893zM60.25879,64.79395c-2.64666,0 -5.43016,1.16785 -7.20166,2.87646c-1.77151,1.70861 -2.72084,3.62636 -3.50635,5.52197l-0.12598,0.29394l-6.69775,24.08252c-0.81578,0.28753 -1.72033,0.54137 -3.54834,1.49072c-1.25576,0.65216 -2.60087,1.41133 -3.92627,2.62451c-1.3254,1.21318 -3.00244,3.15446 -3.00244,6.21484v31.85108v5.375c0,2.967 2.408,5.375 5.375,5.375h5.375v-10.75h86v10.75h5.375c2.967,0 5.375,-2.408 5.375,-5.375v-5.375v-5.375v-26.47608c0,-3.06038 -1.67704,-5.00166 -3.00244,-6.21484c-1.3254,-1.21318 -2.6705,-1.97235 -3.92627,-2.62451c-1.13532,-0.58961 -1.3353,-0.5781 -2.20459,-0.92383l-8.75537,-24.96436l-0.12598,-0.27295c-0.73152,-1.4993 -1.60321,-3.25318 -3.2334,-4.93408c-1.63021,-1.6809 -4.41114,-3.17041 -7.34864,-3.17041zM60.42676,75.54395h50.39063c0.18931,0.21169 0.64607,0.92079 1.15479,1.93164l6.76074,19.27441h-64.62598l5.45898,-19.58936c0.42709,-0.96716 0.76857,-1.50424 0.86084,-1.6167zM46.7373,107.5h78.52539c0.45451,0.15899 1.3645,0.44839 2.60351,1.09179c0.53126,0.27595 0.82399,0.49296 1.13379,0.71388v19.69433h-10.75v-10.75h-10.75v10.75h-43v-10.75h-10.75v10.75h-10.75v-19.69433c0.30983,-0.22091 0.60253,-0.43792 1.13379,-0.71388c1.23902,-0.64342 2.14906,-0.93282 2.60351,-1.09179z"></path></g></g></svg>
+
+<p class="pl-2">Garage</p>
+
+      </div>
+
+      <div v-if="accommodation.features.includes('Abholservice')" class="flex-row flex text-secondary-200 pb-2">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="26" height="26"
+viewBox="0 0 172 172"
+style=" fill:currentColor;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="currentColor"><path d="M64.5,21.5v10.75h-10.79199c-3.98926,0 -7.72656,1.72168 -10.2041,4.19922c-2.43554,2.43555 -3.94726,5.33301 -5.33301,8.31446l0.042,-0.08399l-15.36915,31.95605c-1.21777,0.62989 -2.81348,1.55372 -4.49317,2.81348c-3.2334,2.30957 -7.60058,5.71094 -7.60058,11.92578v48.375c0,5.9209 4.8291,10.75 10.75,10.75h10.75v-10.75h107.5v10.75h10.75c5.9209,0 10.75,-4.8291 10.75,-10.75v-48.375c0,-6.21484 -4.36719,-9.61621 -7.60058,-11.92578c-1.67969,-1.25976 -3.2754,-2.1416 -4.49317,-2.77148l-15.41114,-32.08203l-0.04199,-0.08399c-1.38574,-2.56152 -2.81348,-5.29101 -5.16504,-7.76855c-2.35156,-2.47754 -6.08886,-4.49317 -10.24609,-4.49317h-10.79199v-10.75zM53.70801,43h64.58398c1.25977,0 1.51172,0.16797 2.47754,1.17578c0.96582,1.00781 2.1416,2.93946 3.44336,5.375l12.3457,25.69922h-101.11719l12.42969,-25.90918l0.04199,-0.04199c1.21778,-2.60352 2.35156,-4.40919 3.19141,-5.24903c0.83984,-0.83984 1.17578,-1.0498 2.60352,-1.0498zM28.30274,86h115.43652c0.58789,0.29395 1.84766,0.83984 3.61132,2.09961c2.1416,1.5957 3.14942,3.56933 3.14942,3.27539v37.625h-129v-37.625c0,0.29395 1.00781,-1.67969 3.14942,-3.27539c1.76367,-1.25977 3.02344,-1.80567 3.65332,-2.09961zM37.625,96.75c-2.98145,0 -5.375,2.39355 -5.375,5.375c0,2.98145 2.39355,5.375 5.375,5.375c2.98145,0 5.375,-2.39355 5.375,-5.375c0,-2.98145 -2.39355,-5.375 -5.375,-5.375zM134.375,96.75c-2.98145,0 -5.375,2.39355 -5.375,5.375c0,2.98145 2.39355,5.375 5.375,5.375c2.98145,0 5.375,-2.39355 5.375,-5.375c0,-2.98145 -2.39355,-5.375 -5.375,-5.375zM53.75,107.5v10.75h64.5v-10.75z"></path></g></g></svg>
+
+<p class="pl-2">Abholservice</p>
+
+      </div>
+
+      <div v-if="accommodation.features.includes('Wlan')" class="flex-row flex text-secondary-200 pb-2">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="26" height="26"
+viewBox="0 0 172 172"
+style=" fill:currentColor;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="currentColor"><path d="M125.72461,12.8916l-8.60841,6.46679c7.43263,9.91016 11.88379,22.0879 11.88379,35.39942c0,13.35352 -4.45117,25.57324 -11.88379,35.44141l8.60841,6.4668c8.73438,-11.67383 14.02539,-26.16114 14.02539,-41.90821c0,-15.70507 -5.29101,-30.19239 -14.02539,-41.86621zM99.89942,32.25l-8.6084,6.4668c3.40136,4.57715 5.45898,10.03612 5.45898,16.04101c0,6.04688 -2.05761,11.50586 -5.45898,16.08301l8.6084,6.4248c4.66114,-6.21484 7.60058,-13.9834 7.60058,-22.50781c0,-8.48242 -2.93945,-16.25098 -7.60058,-22.50781zM32.25,53.75v53.75h-5.375c-8.86035,0 -16.125,7.26465 -16.125,16.125v21.5c0,8.86035 7.26465,16.125 16.125,16.125h118.25c8.86035,0 16.125,-7.26465 16.125,-16.125v-21.5c0,-8.86035 -7.26465,-16.125 -16.125,-16.125h-69.875v-53.75h-10.75v53.75h-21.5v-53.75zM26.875,118.25h118.25c3.02344,0 5.375,2.35156 5.375,5.375v21.5c0,3.02344 -2.35156,5.375 -5.375,5.375h-118.25c-3.02344,0 -5.375,-2.35156 -5.375,-5.375v-21.5c0,-3.02344 2.35156,-5.375 5.375,-5.375zM32.25,129v10.75h10.75v-10.75zM53.75,129v10.75h10.75v-10.75zM75.25,129v10.75h10.75v-10.75zM96.75,129v10.75h10.75v-10.75z"></path></g></g></svg>
+<p class="pl-2">Wlan</p>
+
+      </div>
+
+      <div v-if="accommodation.features.includes('Barrierefrei')" class="flex-row flex text-secondary-200 pb-2">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="26" height="26"
+viewBox="0 0 172 172"
+style=" fill:currentColor;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="currentColor"><path d="M91.375,10.75c-8.86035,0 -16.125,7.26465 -16.125,16.125c0,8.86035 7.26465,16.125 16.125,16.125c8.86035,0 16.125,-7.26465 16.125,-16.125c0,-8.86035 -7.26465,-16.125 -16.125,-16.125zM91.375,21.5c3.02344,0 5.375,2.35156 5.375,5.375c0,3.02344 -2.35156,5.375 -5.375,5.375c-3.02344,0 -5.375,-2.35156 -5.375,-5.375c0,-3.02344 2.35156,-5.375 5.375,-5.375zM54.46386,43c-5.62695,0 -10.91797,2.98145 -13.81543,7.81055l-13.01757,21.66797l9.23828,5.54297l13.01757,-21.66797c0.92383,-1.6377 2.6875,-2.60352 4.57715,-2.60352h11.04395c-0.58789,1.67969 -1.00781,3.48535 -1.00781,5.375v16.6709c-18.18261,2.64551 -32.25,18.22461 -32.25,37.0791c0,20.70215 16.92285,37.625 37.625,37.625c20.70215,0 37.625,-16.92285 37.625,-37.625c0,-5.79492 -1.42773,-11.21192 -3.77929,-16.125h11.50585c2.47754,0 4.61915,1.67969 5.20703,4.07324l8.73438,34.85352c0.5879,2.39355 2.72949,4.07324 5.20703,4.07324h16.125v-10.75h-11.92578l-7.72656,-30.78027v-0.04199c-1.76367,-7.13868 -8.27246,-12.17774 -15.62109,-12.17774h-18.47656v-26.875c0,-8.86035 -7.26465,-16.125 -16.125,-16.125zM80.625,53.75c3.02344,0 5.375,2.35156 5.375,5.375v19.9043c-3.35937,-1.59571 -6.9707,-2.6875 -10.75,-3.23341v-16.6709c0,-3.02344 2.35156,-5.375 5.375,-5.375zM69.875,86c14.90723,0 26.875,11.96777 26.875,26.875c0,14.90723 -11.96777,26.875 -26.875,26.875c-14.90723,0 -26.875,-11.96777 -26.875,-26.875c0,-14.90723 11.96777,-26.875 26.875,-26.875z"></path></g></g></svg>
+
+<p class="pl-2">Barrierefrei</p>
+
+      </div>
+
+      <div v-if="accommodation.features.includes('Kleine Haustiere')" class="flex-row flex text-secondary-200 pb-2">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="26" height="26"
+viewBox="0 0 172 172"
+style=" fill:currentColor;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="currentColor"><path d="M107.29172,6.88c-8.94661,-0.02109 -18.26036,5.9722 -24.75859,15.57406c-4.54403,6.7153 -6.87946,14.071 -6.85985,20.76766c0.01961,6.38583 2.31584,12.40812 7.31,15.88985c2.83065,1.97247 6.18755,2.85637 9.5675,2.80172c8.84711,-0.1345 18.01285,-6.08432 24.42937,-15.56735c4.52756,-6.69065 6.85949,-14.02064 6.85313,-20.70047c-0.00393,-6.40698 -2.28132,-12.46411 -7.29656,-15.95703c-2.74183,-1.91528 -5.97416,-2.80001 -9.23828,-2.80844zM107.27828,13.76c2.06788,0.00533 3.81812,0.52219 5.32125,1.57219h0.00672c2.75916,1.92164 4.34407,5.48522 4.34703,10.31328v0.00672c0.00585,5.03512 -1.8473,11.19395 -5.67063,16.84391c-5.41726,8.00595 -13.20409,12.45824 -18.83937,12.5439c-2.14938,0.03475 -3.97189,-0.48575 -5.52953,-1.57219c-2.75272,-1.91908 -4.34569,-5.45832 -4.36047,-10.26625c-0.01478,-5.04594 1.84395,-11.22369 5.67735,-16.89094c5.48672,-8.10725 13.3949,-12.56394 19.04765,-12.55062zM52.76906,17.2c-9.64073,0.01835 -17.69314,9.17797 -20.68031,21.07c-0.77849,3.09507 -1.14021,6.1591 -1.12875,9.09719c0.01913,4.878 1.05931,9.41641 3.1175,13.1486c2.05721,3.7304 5.26233,6.71206 9.37265,7.82062c1.17746,0.31737 2.38479,0.47285 3.58781,0.4636c9.62415,-0.04551 17.65053,-9.19563 20.63328,-21.07c0.76711,-3.05331 1.12875,-6.07825 1.12875,-8.97625c-0.00191,-4.90515 -1.03248,-9.46856 -3.09063,-13.2225c-2.05814,-3.75394 -5.27155,-6.75379 -9.39953,-7.86766h-0.00672c-1.17284,-0.31527 -2.35771,-0.46359 -3.52735,-0.46359zM52.77578,24.08c0.59853,0 1.17252,0.07587 1.74015,0.22844c2.02962,0.54766 3.78417,2.019 5.16,4.52844c1.37583,2.50944 2.24254,5.99499 2.24406,9.91687c0,2.32392 -0.29092,4.79755 -0.92047,7.30328c-2.45192,9.76047 -9.19476,15.84235 -14.00188,15.86297h-0.00672c-0.58578,0.00447 -1.16305,-0.07106 -1.74687,-0.22844c-2.0202,-0.54389 -3.7725,-2.00321 -5.14656,-4.49485c-1.37407,-2.49163 -2.24222,-5.95897 -2.2575,-9.8564c-0.00929,-2.35263 0.28167,-4.8577 0.92047,-7.39735c2.45393,-9.76917 9.20154,-15.84894 14.01531,-15.86297zM146.35453,48.16672c-6.67983,-0.00654 -14.00982,2.32556 -20.70047,6.85313c-9.48302,6.41652 -15.43285,15.58226 -15.56735,24.42937c-0.05466,3.37995 0.82925,6.73685 2.80172,9.5675c3.48172,4.99416 9.50401,7.29037 15.88985,7.31c6.69665,0.01961 14.05235,-2.31582 20.76765,-6.85985c9.60187,-6.49823 15.59514,-15.81198 15.57406,-24.75859v-0.00672c-0.0086,-3.26709 -0.90259,-6.49919 -2.80844,-9.23828c-3.49167,-5.01346 -9.54588,-7.29101 -15.95031,-7.29656zM146.34781,55.04672h0.00672c4.82806,0.00296 8.39164,1.58788 10.31328,4.34703c1.05255,1.51274 1.56686,3.26306 1.57219,5.32797c0.01342,5.65275 -4.44337,13.56093 -12.55063,19.04765c-5.66725,3.83339 -11.845,5.69213 -16.89094,5.67735c-4.80793,-0.01479 -8.34717,-1.60775 -10.26625,-4.36047c-1.08644,-1.55764 -1.60694,-3.38015 -1.57219,-5.52953c0.08566,-5.63529 4.53797,-13.4223 12.5439,-18.83937c5.64996,-3.82333 11.80879,-5.67654 16.84391,-5.67063zM63.64,75.68c-16.77344,0 -28.45359,3.18435 -36.47609,7.0211c-8.0225,3.83675 -12.4323,8.42711 -14.36469,10.5014c-3.97916,4.27587 -5.93138,9.74615 -5.91922,15.16422c0.01218,5.72056 2.20615,11.46864 6.5575,15.81594c4.74738,4.74358 9.35,6.4835 12.98734,7.67953c3.63735,1.19604 6.10768,1.85471 8.98297,4.73c2.87529,2.87529 3.53396,5.34562 4.73,8.98297c1.19604,3.63735 2.93595,8.23996 7.67953,12.98735c4.35068,4.35473 10.08971,6.54939 15.81594,6.5575c5.39253,0.00826 10.85246,-1.9207 15.1239,-5.8789c4.93992,-4.58262 17.56281,-20.67088 17.56281,-50.8811c0,-1.46722 -0.09921,-2.95777 -0.30235,-4.46797h0.00672c-1.91899,-14.40592 -13.51048,-25.99742 -27.9164,-27.9164v0.00672c-1.50882,-0.20362 -3.00075,-0.30235 -4.46797,-0.30235zM63.64,82.56c1.16782,0 2.35904,0.07396 3.55422,0.23515c11.26336,1.50037 20.51025,10.74727 22.01063,22.01063c0.16149,1.20052 0.23515,2.38639 0.23515,3.55422c0,28.26979 -12.11866,42.82929 -15.35906,45.83531c-2.95256,2.73603 -6.67635,4.05034 -10.43422,4.04469c-3.98834,-0.0055 -7.91984,-1.50061 -10.95828,-4.54187h-0.00672c-3.8425,-3.84574 -4.86254,-6.79382 -6.00656,-10.27297c-1.14402,-3.47915 -2.4017,-7.69607 -6.40297,-11.69734c-4.00127,-4.00127 -8.21819,-5.25895 -11.69734,-6.40297c-3.47915,-1.14402 -6.42723,-2.1639 -10.27297,-6.00656v-0.00672c-3.03089,-3.02791 -4.53341,-6.97804 -4.54187,-10.95828c-0.00847,-3.77361 1.31521,-7.49921 4.07156,-10.4611c1.86193,-1.99867 5.27383,-5.62496 12.29531,-8.98297c7.02148,-3.35801 17.60656,-6.34922 33.51313,-6.34922zM133.24625,103.2c-2.898,0 -5.92294,0.36164 -8.97625,1.12875c-11.87437,2.98275 -21.0245,11.00913 -21.07,20.63328c-0.00929,1.20302 0.14623,2.41035 0.4636,3.58781c1.10856,4.11033 4.09022,7.31545 7.82062,9.37265c3.73219,2.05819 8.27059,3.09838 13.1486,3.1175c2.93809,0.01135 6.00212,-0.35026 9.09719,-1.12875c11.88928,-2.98648 21.04742,-11.03583 21.07,-20.6736v-0.00672c0.00413,-1.18527 -0.15108,-2.37139 -0.4636,-3.53406v-0.00672c-1.11386,-4.12766 -4.11371,-7.34139 -7.86765,-9.39953c-3.75394,-2.05815 -8.31735,-3.08871 -13.2225,-3.09063zM133.24625,110.08c3.92189,0.00153 7.40743,0.86823 9.91688,2.24406c2.50944,1.37583 3.98078,3.13038 4.52844,5.16c0.15477,0.5758 0.23067,1.14603 0.22844,1.72672v0.00672c-0.00929,4.81415 -6.08988,11.56712 -15.86297,14.02203c-2.53966,0.63863 -5.04471,0.92965 -7.39735,0.92047c-3.89744,-0.01528 -7.36477,-0.88343 -9.8564,-2.2575c-2.49163,-1.37407 -3.95094,-3.1262 -4.49485,-5.14656c-0.15736,-0.58382 -0.23294,-1.1611 -0.22844,-1.74687v-0.00672c0.02064,-4.80712 6.10249,-11.55012 15.86297,-14.00188c2.50573,-0.62937 4.97937,-0.92047 7.30328,-0.92047z"></path></g></g></svg>
+<p class="pl-2">Tierfreundlich</p>
+
+      </div>
+
+      <div v-if="accommodation.features.includes('missing')" class="flex-row flex text-secondary-200 pb-2">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="24" height="24"
+viewBox="0 0 172 172"
+style=" fill:currentColor;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="currentColor"><path d="M59.125,32.25c-14.82324,0 -26.875,12.05176 -26.875,26.875c0,10.12011 5.71094,18.89649 14.0254,23.43165c-20.40821,5.71094 -35.5254,24.22949 -35.5254,46.44335h96.75c0,-6.63476 -1.34375,-12.97558 -3.77929,-18.77051c4.95507,-4.91308 11.71581,-8.10449 19.40039,-8.10449c15.20118,0 27.37891,12.00977 27.37891,26.875h10.75c0,-16.33496 -10.70801,-30.1084 -25.44726,-35.31543c8.65039,-4.49317 14.69726,-13.4375 14.69726,-23.80957c0,-14.78125 -12.09375,-26.875 -26.875,-26.875c-14.78125,0 -26.875,12.09375 -26.875,26.875c0,10.24609 5.87891,19.10645 14.40332,23.6416c-4.8291,1.5957 -9.23828,3.98926 -12.97558,7.18067c-6.34082,-8.73437 -15.53711,-15.15919 -26.20312,-18.14062c8.31445,-4.53516 14.02539,-13.31153 14.02539,-23.43165c0,-14.82324 -12.05176,-26.875 -26.875,-26.875zM123.625,53.75c8.98633,0 16.125,7.13868 16.125,16.125c0,8.98633 -7.13867,16.125 -16.125,16.125c-8.98632,0 -16.125,-7.13867 -16.125,-16.125c0,-8.98632 7.13868,-16.125 16.125,-16.125z"></path></g></g></svg>
+
+<p class="pl-2">missing</p>
+
+      </div>
+
+      
+      
+
+    </div>
+
+    <div class="mb-12 mt-8 mx-8 md:mx-24">
+      <div class="">
+        <h3 class="font-sp text-xl text-primary">Beschreibung</h3>
+        <p class="text-sgray" v-html="accommodation.longdesc"></p>
       </div>
     </div>
 
     <div>
       <div class="h-96 bg-red-300">
-      <l-map v-model="zoom" v-model:zoom="zoom"
-        :center="[accommodation.location.latitude, accommodation.location.longitude]"
-      >
-        <l-tile-layer
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        ></l-tile-layer>
-        <l-control-layers />
-        <l-marker :lat-lng="[accommodation.location.latitude, accommodation.location.longitude]">
-          <l-icon :icon-url="iconUrl" :icon-size="iconSize" />
-        </l-marker>
-
-      </l-map>
+        <l-map
+          v-model="zoom"
+          v-model:zoom="zoom"
+          :center="[
+            accommodation.location.latitude,
+            accommodation.location.longitude,
+          ]"
+        >
+          <l-tile-layer
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          ></l-tile-layer>
+          <l-control-layers />
+          <l-marker
+            :lat-lng="[
+              accommodation.location.latitude,
+              accommodation.location.longitude,
+            ]"
+          >
+            <l-icon :icon-url="iconUrl" :icon-size="iconSize" />
+          </l-marker>
+        </l-map>
       </div>
     </div>
 
-    <div class="bg-secondary-200 mt-12 px-8 py-4 flex flex-col md:flex-row items-center justify-evenly">
-      
+    <div>
+      <div class="flex flex-col items-center justify-center mt-6">
+        <h3 class="font-sp text-xl text-secondary-200">Adresse</h3>
+
+        <p class="text-sgray">{{ accommodation.contact.street }}</p>
+        <p class="text-sgray">
+          {{ accommodation.contact.zip + " " + accommodation.contact.city }}
+        </p>
+        <p class="text-sgray">Südtirol</p>
+        <p class="text-sgray">Italien</p>
+      </div>
+    </div>
+
+    <div
+      class="bg-secondary-200 mt-8 px-8 py-4 flex flex-col md:flex-row items-center justify-evenly"
+    >
       <div class="flex flex-row items-center">
         <p class="font-sp text-lg text-white">E-Mail:</p>
-        <a class="text-white pl-2" :href="'mailto:' + accommodation.contact.email">{{ accommodation.contact.email }}</a>
+        <a
+          class="text-white pl-2"
+          :href="'mailto:' + accommodation.contact.email"
+          >{{ accommodation.contact.email }}</a
+        >
       </div>
 
       <div class="flex flex-row items-center">
         <p class="font-sp text-lg text-white">Telefon:</p>
-        <a class="text-white pl-2" :href="'tel:' + accommodation.contact.phone ">{{ accommodation.contact.phone }}</a>
+        <a
+          class="text-white pl-2"
+          :href="'tel:' + accommodation.contact.phone"
+          >{{ accommodation.contact.phone }}</a
+        >
       </div>
 
       <div class="flex flex-row items-center">
         <p class="font-sp text-lg text-white">Web:</p>
-        <a class="text-white pl-2" target="_blank" :href="accommodation.contact.website">
-          {{ 
-            accommodation.contact.website.startsWith('https://') ?
-              accommodation.contact.website.slice(8) : accommodation.contact.website.slice(7)
+        <a
+          class="text-white pl-2"
+          target="_blank"
+          :href="accommodation.contact.website"
+        >
+          {{
+            accommodation.contact.website.startsWith("https://")
+              ? accommodation.contact.website.slice(8)
+              : accommodation.contact.website.slice(7)
           }}
         </a>
       </div>
+    </div>
 
+    <div>
+      <div class="flex items-center justify-center">
+        <img
+          class="w-full"
+          :src="accommodation.image ? accommodation.image : ''"
+        />
+      </div>
     </div>
 
     <div class="flex items-center flex-col w-full">
@@ -159,8 +316,15 @@
 
 <script>
 import SouthTyrolHeader from "../components/SouthTyrolHeader.vue";
-import Service from '../service/index.js';
-import { LMap, LIcon, LTileLayer, LMarker, LControlLayers, LTooltip } from "@vue-leaflet/vue-leaflet";
+import Service from "../service/index.js";
+import {
+  LMap,
+  LIcon,
+  LTileLayer,
+  LMarker,
+  LControlLayers,
+  LTooltip,
+} from "@vue-leaflet/vue-leaflet";
 import "leaflet/dist/leaflet.css";
 
 export default {
@@ -183,7 +347,7 @@ export default {
   created() {},
   mounted() {
     Service.getAccommodation(this.$route.params.id)
-      .then(accommodation => {
+      .then((accommodation) => {
         this.accommodation = accommodation;
       })
       .catch();
