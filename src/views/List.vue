@@ -213,7 +213,7 @@
           Urlaub im Herzen Europas
         </p>
 
-        <img src="../assets/st-berge.png" alt="" />
+        <img src="../assets/st-berge-large.png" alt="" />
       </div>
     </div>
 
